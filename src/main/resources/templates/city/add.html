@@ -12,6 +12,7 @@
         <tr>
             <td>Tên:</td>
             <td><input type="text" th:field="*{name}"/></td>
+            <p th:if="${#fields.hasErrors('name')}" th:error="*{name}"></p>
         </tr>
         <tr>
             <td>Quốc gia:</td>
@@ -24,22 +25,25 @@
         <tr>
             <td>Diện tích:</td>
             <td><input type="number" th:field="*{area}"/></td>
+            <p th:if="${#fields.hasErrors('area')}" th:error="*{area}"></p>
         </tr>
         <tr>
             <td>Dân số:</td>
             <td><input type="number" th:field="*{population}"/></td>
+            <p th:if="${#fields.hasErrors('population')}" th:error="*{population}"></p>
         </tr>
         <tr>
             <td>GDP:</td>
             <td><input type="number" th:field="*{gdp}"/></td>
+            <p th:if="${#fields.hasErrors('gdp')}" th:error="*{gdp}"></p>
         </tr>
         <tr>
             <td>Giới thiệu:</td>
             <td><textarea rows="3" th:field="*{description}"/></td>
         </tr>
     </table>
-    <button type="submit">Nhập thành phố</button> &nbsp;
-    <button type="reset"><a th:href="@{/city}">Thoát</a></button>
+    <button style="background-color:darkblue;color: white" type="submit">Nhập thành phố</button> &nbsp;
+    <button style="background-color:darkblue;color: white" type="reset"><a th:href="@{/city}">Thoát</a></button>
 </form>
 </body>
 </html>

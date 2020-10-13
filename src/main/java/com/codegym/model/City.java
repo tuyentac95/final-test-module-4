@@ -21,7 +21,9 @@ public class City {
     private Country country;
 
     private Long area;
+
     private Long population;
+
     private Long gdp;
 
     @Column(columnDefinition = "longtext")

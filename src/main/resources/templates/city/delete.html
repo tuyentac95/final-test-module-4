@@ -9,8 +9,8 @@
 <form th:action="@{/city/delete}" method="post" th:object="${city}">
     <input type="hidden" th:field="*{id}">
     <p>Bạn có chắc muốn xóa thành phố: <span th:text="${city.name}"></span></p>
-    <button type="submit">Xóa</button>&nbsp;
-    <button><a th:href="@{/city}">Thoát</a></button>
+    <button style="background-color:darkblue;color: white" type="submit">Xóa</button>&nbsp;
+    <button style="background-color:darkblue;color: white"><a th:href="@{/city}">Thoát</a></button>
 </form>
 
 </body>

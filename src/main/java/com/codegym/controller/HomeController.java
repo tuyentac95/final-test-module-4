@@ -6,6 +6,8 @@ import com.codegym.service.CityService;
 import com.codegym.service.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -61,11 +63,9 @@ public class HomeController {
     }
 
     @PostMapping("/edit")
-    public ModelAndView editCity(@ModelAttribute("city") City city){
+    public String editCity(@ModelAttribute("city") City city){
         cityService.saveCity(city);
-        ModelAndView modelAndView = new ModelAndView("city/list");
-        modelAndView.addObject("cities", cityService.findAll());
-        return modelAndView;
+        return "redirect:";
     }
 
     @GetMapping("/delete/{id}")
@@ -76,10 +76,8 @@ public class HomeController {
     }
 
     @PostMapping("/delete")
-    public ModelAndView deleteCity(@ModelAttribute("city") City city){
+    public String deleteCity(@ModelAttribute("city") City city){
         cityService.deleteCity(city.getId());
-        ModelAndView modelAndView = new ModelAndView("city/list");
-        modelAndView.addObject("cities", cityService.findAll());
-        return modelAndView;
+        return "redirect:";
     }
 }
